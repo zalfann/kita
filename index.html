@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Layout Responsive</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="cover" aria-label="cover image">
+      <img src="cover.png" alt="cover">
+    </header>
+
+    <main class="gallery">
+  <img class="reveal" src="1.png" />
+  <img class="reveal" src="2.png" />
+  <img class="reveal" src="3.png" />
+  <img class="reveal" src="4.png" />
+  <img class="reveal" src="5.png" />
+  <img class="reveal" src="6.png" />
+  <img class="reveal" src="7.png" />
+  <img class="reveal" src="8.png" />
+</main>
+  </div>
+  
+<script>
+  function revealScroll() {
+    document.querySelectorAll('.reveal').forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      const trigger = window.innerHeight * 0.85;
+
+      if (top < trigger) {
+        el.classList.add('show');
+      } else {
+        el.classList.remove('show'); // animasi bisa diputar ulang
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealScroll);
+  window.addEventListener('load', revealScroll);
+</script>
+
+<div class="music-floating">
+  <audio controls>
+    <source src="kita.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+</body>
+</html>
